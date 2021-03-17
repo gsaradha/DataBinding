@@ -1,0 +1,9 @@
+<div
+class="panel panel-default">
+<div class="panel-heading">{{ name }} - {{ this.rndNumber}}</div>
+<button class="btn btn-primary" (click)="onChangeName()">Change Name</button>
+<button class="btn btn-primary" (click)="onChangeFirstValue()">Change Value</button>
+<div class="panel-body">
+ <ng-content></ng-content>
+</div>
+</div>

@@ -1,28 +1,19 @@
-import { Component } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
   serverElements = [];
-  newServerName = '';
-  newServerContent = '';
-
-  onAddServer() {
-    this.serverElements.push({
-      type: 'server',
-      name: this.newServerName,
-      content: this.newServerContent
-    });
+@ViewChild('contentParagraph')contentParagraph:ElementRef;
+  OnServerInput(serverDetails:Event){
+        this.serverElements.push(serverDetails);
   }
 
-  onAddBlueprint() {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: this.newServerName,
-      content: this.newServerContent
-    });
+  onChangeFirst(){
+    this.serverElements[0].name = "changed";
   }
+  
 }
